@@ -29,7 +29,9 @@ pipeline {
             }
         }
     stage('Publish to Nexus Repository Manager') {
-            steps {
+            steps { 
+                dir("/var/lib/jenkins/workspace/demo-pipeline/my-app/")
+                {
                 script {
                     pom = readMavenPom file: "pom.xml";
                     filesByGlob = findFiles(glob: "target/*.${pom.packaging}");
@@ -60,6 +62,7 @@ pipeline {
                     } else {
                         error "*** File: ${artifactPath}, could not be found";
                     }
+                }
                 }
             }
     }
