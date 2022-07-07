@@ -10,7 +10,7 @@ pipeline {
         NEXUS_PROTOCOL = "http"
         NEXUS_URL = "http://34.211.159.206:8080"
         NEXUS_REPOSITORY = "Nexus1"
-        NEXUS_CREDENTIAL_ID = "admin"
+        NEXUS_CREDENTIAL_ID = "admin1"
     }
 
     stages {
