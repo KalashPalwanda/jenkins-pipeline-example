@@ -20,6 +20,14 @@ pipeline {
                 echo "M2_HOME = /opt/maven"
             }
         }
+        stage("clone code") {
+            steps {
+                script {
+                    // Let's clone the source
+                    git 'https://github.com/danielalejandrohc/cargotracker.git';
+                }
+            }
+        }
         stage('Build') {
             steps {
                 dir("/var/lib/jenkins/workspace/demo-pipeline/my-app/") {
